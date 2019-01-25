@@ -1,12 +1,8 @@
 FROM websphere-liberty:webProfile7
 COPY server.xml /config/server.xml
 COPY server.env /config/server.env
-COPY CustomerOrderServicesApp/target/CustomerOrderServicesApp-0.1.0-SNAPSHOT.ear 
-
-/config/apps
-COPY ProductSearchServiceApp/target/ProductSearchServiceApp-0.1.0-SNAPSHOT.ear 
-
-/config/apps
+COPY CustomerOrderServicesApp/target/CustomerOrderServicesApp-0.1.0-SNAPSHOT.ear /config/apps
+COPY ProductSearchServiceApp/target/ProductSearchServiceApp-0.1.0-SNAPSHOT.ear /config/apps
 COPY db2lib/db2jcc4.jar /liberty/wlp/usr/shared/resources
 COPY db2lib/db2jcc_license_cu.jar /liberty/wlp/usr/shared/resources
 
